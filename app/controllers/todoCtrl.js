@@ -1,20 +1,23 @@
  angular.module('myApp').controller('TodoCtrl', ['$scope', 'todoService', function ($scope, todoService) {
-        $scope.getNotes = function () {
-            return todoService.notes();
+
+        $scope.todos =  todoService.todos();
+
+        $scope.getTodos = function () {
+            return todoService.todos();
         };
-        $scope.addNote = function (noteTitle) {
-            if(noteTitle != '') {
-                todoService.addNote(noteTitle);
+        $scope.addTodo = function (text,date) {
+            if(text != '') {
+                todoService.addTodo(text,date);
             }
         };
 
-        $scope.deleteNote = function (id) {
+        $scope.deleteTodo = function (id) {
           console.log(id);
-            todoService.deleteNote(id);
+            todoService.deleteTodo(id);
         };
 
         $scope.resetForm = function() {
-            $scope.noteTitle = '';
+            $scope.text = '';
         };
     }]);
 

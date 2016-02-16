@@ -12,13 +12,16 @@
 <body>
   <div ng-app="myApp">
     <script type="text/ng-template" id="partials/notebook-directive.html">
-    <ul class="thumbnails" ng-repeat="(key, value) in notes | groupBy: 'team'" >
-       Group name: {{ key }}
-        <li ng-repeat="note in value">
-            <my-note class="span2 thumbnail" delete="deleteNote(note.id)" note="note">
-                <button class="btn btn-large close pull-right" ng-click="delete(note.id)">&times;</button>
-                <hr/>
-                <p>{{note.title}}</p>
+    <span class="count">Completed : {{completedCount}}</span><span class="">Remaining Count: {{remainingCount}}</span>
+    <ul class="thumbnails" ng-repeat="(key, value) in todos | groupBy: 'date'" >
+       Due Date: {{ key }}  ___________total: {{value.length}}__________completed:{{(value |  filter:{done:true}).length }}
+         <li ng-repeat="todo in value">
+            <my-note class="span2 thumbnail" delete="deleteTodo(todo.id)" todo="todo" >
+                <button class="btn btn-large close pull-right" ng-click="delete(todo.id)">&times;</button>
+                <!-- <hr/> -->
+                <input class="todo-chkbox" type="checkbox" ng-model="todo.done">
+                <p class="todo-text" ng-show="!todo.done">{{todo.title}}</p>
+                <p class="todo-text" ng-show="todo.done"><del>{{todo.title}}</del></p>
             </my-note>
         </li>
     </ul>
@@ -26,20 +29,22 @@
 
     <div ng-controller="TodoCtrl">
         <div class="page-header">
-            <h1>Todo </h1>
+            <h1>Todo List</h1>
         </div>
         <div class="form-actions">
             <div class="input-append">
-                <form ng-submit="addNote(noteTitle);resetForm();">
-                    <input class="todo-input" ng-model="noteTitle" type="text" placeholder="Add a todo">
-                    <input   class="todo-date" type="date" name="bday">
+                <form ng-submit="addTodo(text,date);resetForm();">
+                    <input class="todo-input" ng-model="text" type="text" placeholder="Add a todo">
+                    <input   class="todo-date" type="date" ng-model="date">
                     <button class="btn-submit" type="button"
-                        ng-disabled="!noteTitle" ng-click="addNote(noteTitle);resetForm();">Add Todo
+                        ng-disabled="!date" ng-click="addTodo(text, date);resetForm();">Add Todo
                     </button>
-                </form>
+              </form>
             </div>
         </div>
-        <my-notebook class="todo-wrapper" notes="getNotes()" ondelete="deleteNote(id)"></my-notebook>
+        <my-notebook class="todo-wrapper" todos="getTodos()" ondelete="deleteTodo(id)">
+          {{remainingCount}}
+        </my-notebook>
     </div>
 </div>
 

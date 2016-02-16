@@ -1,31 +1,33 @@
-angular.module('myApp').service('todoService', function () {
+angular.module('myApp').service('todoService', function ($filter) {
         var data = [
-            {id:1, title:'Note 1',team:'two'},
-            {id:2, title:'Note 2',team:'one'},
-            {id:3, title:'Note 3',team:'one'},
-            {id:4, title:'Note 4',team:'two'},
-            {id:5, title:'Note 5',team:'three'},
-            {id:6, title:'Note 6',team:'one'},
-            {id:7, title:'Note 7',team:'two'},
-            {id:8, title:'Note 8',team:'three'}
+            {id:1, title:'todo 1',date:'12/02/2016',done:false},
+            {id:2, title:'todo 2',date:'11/02/2016',done:false},
+            {id:3, title:'todo 3',date:'11/02/2016',done:false},
+            {id:4, title:'todo 4',date:'10/02/2016',done:false},
+            {id:5, title:'todo 5',date:'11/02/2016',done:false},
+            {id:6, title:'todo 6',date:'10/02/2016',done:false},
+            {id:7, title:'todo 7',date:'12/02/2016',done:false},
+            {id:8, title:'todo 8',date:'10/02/2016',done:false}
         ];
 
         return {
-            notes:function () {
+            todos:function () {
                 return data;
             },
-            addNote:function (noteTitle) {
+            addTodo:function (text,date) {
+                console.log(date);
                 var currentIndex = data.length + 1;
                 data.push({
-                    id:currentIndex, title:noteTitle,team:'one'
+                    id:currentIndex, title:text,date:$filter('date')(date, "dd/MM/yyyy"),done:false
                 });
             },
-            deleteNote:function (id) {
-                var oldNotes = data;
+            deleteTodo:function (id) {
+                var oldTodos = data;
                 data = [];
-                angular.forEach(oldNotes, function (note) {
-                    if (note.id !== id) data.push(note);
+                angular.forEach(oldTodos, function (item) {
+                    if (item.id !== id) data.push(item);
                 });
+              console.log(data);
             }
         };
     });
