@@ -1,0 +1,42 @@
+ <div class="customer-inputForm" ng-controller="customerCtrl">
+        <form ng-submit="addCustomer()">
+            <table>
+                <tr>
+                    <td>Customer Name:
+                        <input type="text" ng-model="custName"></input>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Address:
+                        <input type="text" ng-model="address"></input>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Country:
+                        <input type="text" ng-model="country"></input>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Account Manager:
+                        <input type="text" ng-model="accMngr"></input>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Account Manager Email:
+                        <input type="email" ng-model="accMngrEmail"></input>
+                    </td>
+                </tr>
+            </table>
+            <input type="submit" value="Add Customer"></input>
+        </form>
+        <input ng-model="searchKeyword" placeholder="Search..."></input>
+        <table>
+            <tr ng-repeat="item in customers | filter: searchKeyword  track by $index">
+                <td>{{item.custName}}</td>
+                <td>{{item.address}}</td>
+                <td>{{item.country}}</td>
+                <td>{{item.accMngr}}</td>
+                <td>{{item.accMngrEmail}}</td>
+            </tr>
+        </table>
+    </div>

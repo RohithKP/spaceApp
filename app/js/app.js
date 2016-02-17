@@ -1,21 +1,27 @@
-var app = angular.module('spaceApp', ['ngResource']);
+var app = angular.module('spaceApp', ['ngRoute','ngResource']);
 
-app.controller('addCustomer', ['$scope', '$http', function($scope,$http) {
-    $scope.customers = [];
-    $http.get('../assets/json/customers.json').success(function(data){
-    newjson = data.customers.replace(/'/g, '"');
-    s='['+ newjson.substring(1, newjson.length - 1) +']';
-  	console.log(eval(s)[0].custName);
-  });
-    $scope.addCustomer = function() {
-            $scope.customers.push({
-            custName: $scope.custName,
-            address: $scope.address,
-            country: $scope.country,
-            accMngr: $scope.accMngr,
-            accMngrEmail: $scope.accMngrEmail
-        });
+    app.config(['$routeProvider',function($routeProvider) {
 
-    };
+        $routeProvider.
+            when('/dashboard', {
+                templateUrl:'/app/partials/dashboard.html',
+                controller: '' ,
+                css:''    
+                
+            }).
+            when('/customers', {
+                templateUrl:'/app/partials/customer.html',
+                controller: 'customerCtrl',    
+                css:''
+            }).
+            when('/todo', {
+                templateUrl:'/app/partials/todo.html',
+                controller: '',
+                css:''                 
+            }).
+            otherwise({
+                redirectTo: '/index.html'
+            });
+                       
+    }]);
 
-}]);

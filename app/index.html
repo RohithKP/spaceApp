@@ -4,55 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Space</title>
+    <script type="text/javascript" src="js/lib/angular.min.js"></script>
+    <script type="text/javascript" src="js/lib/angular-resource.min.js"></script>
+    <script type="text/javascript" src="js/lib/angular-route.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="services/jsonService.js"></script>
+    <script type="text/javascript" src="controllers/customerCtrl.js"></script>
+
 </head>
-<style type="text/css">
-.inputForm input {
-    clear: both;
-}
-</style>
 
 <body>
-    <div class="inputForm" ng-controller="addCustomer">
-        <form ng-submit="addCustomer()">
-            <table>
-                <tr>
-                    <td>Customer Name:
-                        <input type="text" ng-model="custName"></input>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Address:
-                        <input type="text" ng-model="address"></input>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Country:
-                        <input type="text" ng-model="country"></input>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Account Manager:
-                        <input type="text" ng-model="accMngr"></input>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Account Manager Email:
-                        <input type="email" ng-model="accMngrEmail"></input>
-                    </td>
-                </tr>
-            </table>
-            <input type="submit" value="Add Customer"></input>
-        </form>
-
-        <table>
-        	<tr ng-repeat="item in customers"><td>{{item.custName}}</td><td>{{item.address}}</td><td>{{item.country}}</td><td>{{item.accMngr}}</td><td>{{item.accMngrEmail}}</td></tr>
-        </table>
-    </div>
+    <div class="header-wrapper"></div>
+    <div class="navmenu-wrapper"></div>
+    <div ng-view></div>
+   
+    <div class="footer-wrapper"></div>
 </body>
-<script type="text/javascript" src="js/lib/jquery-2.2.0.min.js"></script>
-<script type="text/javascript" src="js/lib/angular.min.js"></script>
-<script type="text/javascript" src="js/lib/angular-route.min.js"></script>
-<script type="text/javascript" src="js/lib/angular-resource.min.js"></script>
-<script type="text/javascript" src="js/app.js"></script>
-
 </html>
