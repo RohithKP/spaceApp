@@ -5,23 +5,24 @@
 body{
   margin:0;
   padding:0 ;
+  font-family:sans-serif;
 }
 
-ul{
+.ul{
   margin: 70px 0;
-  background-color:#ccc;
+  background-color:#999;
   padding: 0;
 }
-li{
+.li{
   overflow: auto;
   padding:5px;
-  background-color: #666;
+  background-color: #ccc;
   list-style: none;
-  margin:1px;
+  margin:1px 0;
 }
 .todo-wrapper{
   display:block;
-  max-width:60%;
+  max-width:70%;
   margin:0 auto;
   clear:both;
 }
@@ -46,6 +47,7 @@ li{
 .form-actions{
   max-width:60% ;
 margin:0 auto;
+  overflow: auto;
 }
 .close{
   float: right;
@@ -57,4 +59,20 @@ margin:0 auto;
 }
 .todo-text{
   float: left;
+  margin-left:10px;
+  width:90%;
+  height: 30px;
+  padding: 6px;
+}
+.page-header{
+  text-align:center;
+}
+.todo-history{
+  text-align:center;
+}
+.todo-wrapper{
+ margin-top: 40px;
+}
+.editing{
+  background-color: #ccffdd;
 }
