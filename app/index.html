@@ -4,6 +4,7 @@
 
       <link rel="stylesheet" href="./assets/stylesheets/bootstrap.css" />
       <link rel="stylesheet" href="./assets/stylesheets/font-awesome.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.css" />
       <link rel="stylesheet" href="./assets/stylesheets/styles.css">
 
        <script type="text/javascript" src="../js/lib/angular.js"></script>
@@ -33,21 +34,21 @@
         <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class=""><a href="#"> <img src="" alt="" width="30" height="30" class="img-circle"> <span class="sr-only">(current)</span></a></li>
-            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-            <li><a href="#dashboard">Dashboard</a></li>
-            <li><a href="#">Employees</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#customers">Customers</a></li>
-            <li><a href="#">Status Report</a></li>
-            <li><a href="#">Vacation</a></li>
-            <li><a href="#todo">ToDo</a></li>
+            <li class=""><a href="#"> <img src="./assets/images/tom.jpeg" alt="" width="30" height="30" class="img-circle"> <span class="">Rohith K P</span></a></li>
+            <!-- <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li> -->
+            <li><a href="#dashboard"><i class="fa fa-tachometer"></i>Dashboard</a></li>
+            <li><a href="#"><i class="fa fa-users"></i>Employees</a></li>
+            <li><a href="#"><i class="fa fa-codepen"></i>Projects</a></li>
+            <li><a href="#customers"><i class="fa fa-user-secret"></i>Customers</a></li>
+            <!-- <li><a href="#">Status Report</a></li> -->
+            <li><a href="#"><i class="fa fa-plane"></i>Vacation</a></li>
+            <li><a href="#todo"><i class="fa fa-server"></i>ToDo</a></li>
           </ul>
         </div>
 
         <!-- MAIN CONTENT AND INJECTED VIEWS -->
         <div id="main">
-            <div ng-view></div>
+            <div ng-view class="col-md-10 col-lg-10"></div>
 
             <!-- angular templating -->
             <!-- this is where content will be injected -->

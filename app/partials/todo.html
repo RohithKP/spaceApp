@@ -1,31 +1,19 @@
-<!-- <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Space App</title>
-  <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css" />
-   <script type="text/javascript" src="../js/lib/jquery-1.3.2.min.js"></script>
-  <script type="text/javascript" src="../js/lib/angular.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/angular-filter/0.4.7/angular-filter.js"></script>
-<link rel="stylesheet" href="../assets/stylesheets/styles.css">
-</head>
-<body> -->
   <div >
     <script type="text/ng-template" id="partials/notebook-directive.html">
-    <div class="todo-wrapper">
-    <div class='todo-history'>
+
+    <div class=''>
     <h2>Todo History</h2>
-    <span class="count">Completed : {{completedCount}}</span><span class="">Remaining Count: {{remainingCount}}</span>
+    <span class="col-lg-4">Completed : {{completedCount}}</span><span class="col-lg-4">Remaining Count: {{remainingCount}}</span>
    </div>
-   <ul class="thumbnails" ng-repeat="(key, value) in todos | groupBy: 'date'" >
-       Due Date: {{ key }}  ___________total: {{value.length}}__________completed:{{(value |  filter:{done:true}).length }}
-         <li class="list-item" ng-repeat="todo in value"  ng-init="x = todo.title" >
-            <my-note class="span2 thumbnail" delete="deleteTodo(todo.id)" todo="todo" >
-                <button class="btn btn-large close pull-right" ng-click="delete(todo.id)" >&times;</button>
-                <hr/>
+   <div class="col-lg-8">
+   <ul class="" ng-repeat="(key, value) in todos | groupBy: 'date'" >
+       <span class="col-lg-4"> Due Date: {{ key }} </span>   <span class="col-lg-4">total: {{value.length}}</span> <span class="col-lg-4">completed:{{(value |  filter:{done:true}).length }}</span>
+         <li class="list-item" ng-repeat="todo in value"  >
+            <my-note class="span2 " delete="deleteTodo(todo.id)" todo="todo" >
+                <button class="  pull-right" ng-click="delete(todo.id)" >&times;</button>
                 <input class="todo-chkbox" type="checkbox" ng-model="todo.done">
-                <p class="todo-text" ng-show="!todo.done" ng-model="todo.title"  contenteditable="{{bool}}" ng-dblclick="edit()" >{{x}}</p>
-                <p class="todo-text" ng-show="todo.done" ><del>{{x}}</del></p>
+                <input class="todo-text" ng-show="!todo.done"  ng-disabled=bool editable ng-model="todo.title" ng-dblClick="edit()" >
+                <p class="todo-text" ng-show="todo.done" ><del>{{todo.title}}</del></p>
             </my-note>
         </li>
     </ul>
@@ -48,18 +36,9 @@
             </div>
         </div>
 
-        <my-notebook class="todo-wrapper" todos="getTodos()" ondelete="deleteTodo(id)">
+        <my-notebook class="col-lg-10 todo-wrapper" todos="getTodos()" ondelete="deleteTodo(id)">
           {{remainingCount}}
         </my-notebook>
     </div>
   </div>
 
-<!-- <script type="text/javascript" src="../js/app.js"></script>
-<script type="text/javascript" src="../services/todoService.js"></script>
-<script type="text/javascript" src="../controllers/todoCtrl.js"></script>
-<script type="text/javascript" src="../controllers/dashboardCtrl.js"></script>
-<script type="text/javascript" src="../directives/listItem.js"></script>
-
-</body>
-</html>
- -->

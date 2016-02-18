@@ -1,5 +1,5 @@
 angular.module('myApp').service('todoService', function ($filter) {
-        var data = [
+       data = [
             {id:1, title:'todo 1',date:'12/02/2016',done:false},
             {id:2, title:'todo 2',date:'11/02/2016',done:false},
             {id:3, title:'todo 3',date:'11/02/2016',done:false},
