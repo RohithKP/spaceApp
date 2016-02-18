@@ -9,7 +9,7 @@ app.controller('customerCtrl', ['$scope','$http', 'jsonService',function($scope,
     // $scope.customers = ($scope.saved !== null) ? JSON.parse($scope.saved) : [];
     
     $scope.addCustomer = function() {
-            $scope.customers.push({
+            $scope.customers.unshift({
             custName: $scope.custName,
             address: $scope.address,
             country: $scope.country,

@@ -1,0 +1,41 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.customer-inputForm{
+	display: block;
+	width: 500px;
+	margin: 0 auto;
+}
+
+.customer-list{
+	border-collapse: collapse;
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+
+
+}
+.customer-list{
+	padding: 1rem;
+	table-layout: fixed;
+}
+.customer-list th{
+	background-color: #4CAF50;
+	color: #fff;
+	padding: .6rem;
+	padding-left: 0;
+
+	text-align: left;
+}
+.customer-list th,td{
+	text-align: left;
+	padding-left: 0;
+	padding-right: .7rem;
+}
+.customer-list td{
+	padding: 15px;
+}
+.customer-list td a{
+	text-decoration:none;
+}

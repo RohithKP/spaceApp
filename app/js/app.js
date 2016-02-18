@@ -12,7 +12,7 @@ var app = angular.module('spaceApp', ['ngRoute','ngResource']);
             when('/customers', {
                 templateUrl:'/app/partials/customer.html',
                 controller: 'customerCtrl',    
-                css:''
+                css:'/app/assets/stylesheets/customers.css'
             }).
             when('/todo', {
                 templateUrl:'/app/partials/todo.html',

@@ -1,4 +1,5 @@
- <div class="customer-inputForm" ng-controller="customerCtrl">
+ <div ng-controller="customerCtrl">
+ <div class="customer-inputForm" >
         <form ng-submit="addCustomer()">
             <table>
                 <tr>
@@ -29,14 +30,24 @@
             </table>
             <input type="submit" value="Add Customer"></input>
         </form>
-        <input ng-model="searchKeyword" placeholder="Search..."></input>
-        <table>
+        
+</div>
+<input ng-model="searchKeyword" placeholder="Search..." class="customer-search"></input>
+<table class="customer-list">
+            <tr>
+                <th>Customer Name</th>
+                <th>Address</th>
+                <th>Country</th>
+                <th>Account Manager</th>
+                <th>Account Manager Email</th>
+            </tr>
             <tr ng-repeat="item in customers | filter: searchKeyword  track by $index">
-                <td>{{item.custName}}</td>
+                <td><a href="/#">{{item.custName}}</a></td>
                 <td>{{item.address}}</td>
                 <td>{{item.country}}</td>
-                <td>{{item.accMngr}}</td>
-                <td>{{item.accMngrEmail}}</td>
+                <td><a ng-href="/#">{{item.accMngr}}</a></td>
+                <td><a ng-href="/#">{{item.accMngrEmail}}</a></td>
             </tr>
-        </table>
-    </div>
+</table>
+
+</div>
