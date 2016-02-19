@@ -11,6 +11,9 @@ angular.module('myApp').directive('myNotebook', function ($filter) {
                       $scope.delete = function (id) {
                           $scope.ondelete({id:id});
                            }
+                       $scope.hover = function (todo) {
+                          todo.showDelete = !todo.showDelete;
+                           }
                  },
                 link:function (scope, element, attrs) {
              		  scope.$watch('todos', function () {
@@ -24,14 +27,7 @@ angular.module('myApp').directive('myNotebook', function ($filter) {
     })
     .directive('myNote', function ($filter) {
         return {
-            controller:function ($scope, $attrs) {
-                           $scope.bool = 'false';
 
-                           $scope.edit = function () {
-                           $scope.bool = !scope.bool;
-                             console.log('as');
-                               }
-            },
             restrict:'E',
             scope:{
                 delete:'&',
@@ -44,13 +40,13 @@ angular.module('myApp').directive('myNotebook', function ($filter) {
     }).directive('editable', function() {
      return {
             controller:function ($scope, $attrs) {
-                           $scope.bool = 'false';
+                           $scope.bool = true;
                            $scope.edit = function () {
-//                                $scope.bool = !$scope.bool;
-                               console.log('as');
+                               $scope.bool = !$scope.bool;
                                }
             },
            link: function(scope, elm, attrs, ctrl) {
+
            }
   };
 });

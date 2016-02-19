@@ -6,6 +6,7 @@
       <link rel="stylesheet" href="./assets/stylesheets/font-awesome.css" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.css" />
       <link rel="stylesheet" href="./assets/stylesheets/styles.css">
+      <link rel="stylesheet" href="./assets/stylesheets/bootstrap-checkbox.css">
 
        <script type="text/javascript" src="../js/lib/angular.js"></script>
           <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
@@ -15,7 +16,7 @@
 
         <!-- HEADER AND NAVBAR -->
         <header>
-            <nav class="navbar navbar-default">
+            <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="/">Space</a>
@@ -30,10 +31,10 @@
             </nav>
         </header>
 
-        <div class="container-fluid">
+        <div class="container-fluid body-wrapper">
         <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
+        <div class="col-sm-3 col-md-2 sidebar sidebar-nav-fixed affix">
+          <ul class="nav nav-sidebar ">
             <li class=""><a href="#"> <img src="./assets/images/tom.jpeg" alt="" width="30" height="30" class="img-circle"> <span class="">Rohith K P</span></a></li>
             <!-- <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li> -->
             <li><a href="#dashboard"><i class="fa fa-tachometer"></i>Dashboard</a></li>
@@ -48,7 +49,7 @@
 
         <!-- MAIN CONTENT AND INJECTED VIEWS -->
         <div id="main">
-            <div ng-view class="col-md-10 col-lg-10"></div>
+            <div ng-view class="col-md-10 col-lg-10 pull-right"></div>
 
             <!-- angular templating -->
             <!-- this is where content will be injected -->

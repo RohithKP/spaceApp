@@ -2,18 +2,20 @@
     <script type="text/ng-template" id="partials/notebook-directive.html">
 
     <div class=''>
-    <h2>Todo History</h2>
+    <hr>
+    <h3>Todo History</h3>
     <span class="col-lg-4">Completed : {{completedCount}}</span><span class="col-lg-4">Remaining Count: {{remainingCount}}</span>
    </div>
    <div class="col-lg-8">
-   <ul class="" ng-repeat="(key, value) in todos | groupBy: 'date'" >
-       <span class="col-lg-4"> Due Date: {{ key }} </span>   <span class="col-lg-4">total: {{value.length}}</span> <span class="col-lg-4">completed:{{(value |  filter:{done:true}).length }}</span>
-         <li class="list-item" ng-repeat="todo in value"  >
+   <ul class="" ng-repeat="(key, value) in todos | groupBy: 'date'  "  >
+       <span class=""> Due Date: {{ key }} </span>   <span class="">total: {{value.length}}</span> <span class="">completed:{{(value |  filter:{done:true}).length }}</span>
+         <li class="list-item" ng-repeat="todo in value |orderBy:'dateAdded'" ng-mouseenter="hover(todo)" ng-mouseleave="hover(todo)" >
             <my-note class="span2 " delete="deleteTodo(todo.id)" todo="todo" >
-                <button class="  pull-right" ng-click="delete(todo.id)" >&times;</button>
-                <input class="todo-chkbox" type="checkbox" ng-model="todo.done">
-                <input class="todo-text" ng-show="!todo.done"  ng-disabled=bool editable ng-model="todo.title" ng-dblClick="edit()" >
-                <p class="todo-text" ng-show="todo.done" ><del>{{todo.title}}</del></p>
+                <span ng-show="todo.showDelete" ><span class="pull-right" ng-click="delete(todo.id)" ><i class="fa fa-times"></i></span>
+                <span class="pull-right" editable ng-click="edit()" > <i ng-show="bool" class="fa fa-pencil"></i><i  ng-show="!bool" class="fa fa-floppy-o"></i></span></span>
+                <input class="todo-chkbox checkbox-circle" type="checkbox" ng-model="todo.done">
+                <input class="todo-text" editable ng-show="!todo.done"  ng-disabled=bool  ng-model="todo.title"  >{{todo.dateAdded}}
+                <span class="todo-text" ng-show="todo.done" ><del>{{todo.title}}</del></span>
             </my-note>
         </li>
     </ul>
@@ -21,15 +23,15 @@
     </script>
 
     <div ng-controller="TodoCtrl">
-        <div class="page-header">
-            <h1>Todo List</h1>
+        <div class="">
+            <h3>Todo List</h3>
         </div>
         <div class="form-actions">
             <div class="input-append">
                 <form ng-submit="addTodo(text,date);resetForm();">
                     <input class="todo-input" ng-model="text" type="text" placeholder="Add a todo">
                     <input   class="todo-date" type="date" ng-model="date">
-                    <button class="btn-submit" type="button"
+                    <button class="btn btn-primary btn-add btn-success" type="button"
                         ng-disabled="!date" ng-click="addTodo(text, date);resetForm();">Add Todo
                     </button>
               </form>
