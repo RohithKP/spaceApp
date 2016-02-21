@@ -13,16 +13,31 @@
     <script type="text/javascript" src="controllers/customerDetailsCtrl.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/stylesheets/styles.css">
     <link rel="stylesheet" type="text/css" href="assets/stylesheets/customers.css">
-
-
 </head>
 
 <body>
-    <div class="header-wrapper"></div>
-    <div class="navmenu-wrapper"></div>
-    <a href="#customers">Customers</a>
-    <div ng-view></div>
-   
-    <div class="footer-wrapper"></div>
+    <div id="page-wrap">
+        <div class="header-wrap">
+            <span class="space-logo">Space</span>
+            <div class="navmenu-wrap">
+
+            <ul>
+                <li><a ng-href="#">Dashboard</a></li>
+                <li><a ng-href="#">Employees</a></li>
+                <li><a ng-href="#">Projects</a></li>
+                <li><a ng-href="#">Customers</a></li>
+                <li><a ng-href="#">Status Report</a></li>
+                <li><a ng-href="#">Vacation</a></li>
+                <li><a ng-href="#">To Do</a></li>
+            </ul>
+            </div>
+        </div>
+        <div class="container"></div>
+        <!-- <a href="#customers">Customers</a> -->
+        <div ng-view></div>
+    </div>
+    <div class="footer-wrap"></div>
+    </div>
 </body>
+
 </html>

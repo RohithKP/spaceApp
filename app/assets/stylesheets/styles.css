@@ -1,0 +1,39 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+html, body, #page-wrap{
+	width: 100%;
+}
+
+.header-wrap{
+	height: 120px;
+	width: 100%;
+	background-color: #000;
+	position: fixed;
+	top: 0;
+	z-index: 10;
+}
+.space-logo{
+	font-size: 4rem;
+	color: #fff;
+	font-family: 'Arial';
+	margin-top: 20px;
+	margin-left: 10px;
+}
+.navmenu-wrap{
+	width: 20%;
+	position: fixed;
+	height: 100%;
+}
+.container{
+	position: absolute;
+	top: 120px;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+}
+.footer-wrap{
+
+}
