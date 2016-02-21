@@ -1,4 +1,4 @@
-app.controller('customerDetailsCtrl', ['$routeParams', '$scope', '$http', 'jsonService', function($routeParams, $scope, $http, jsonService) {
+app.controller('customerDetailsCtrl', ['$routeParams', '$scope', 'jsonService', function($routeParams, $scope, jsonService) {
     var custId = $routeParams.custId;
     var customers = [];
     $scope.customer = [];
@@ -6,10 +6,11 @@ app.controller('customerDetailsCtrl', ['$routeParams', '$scope', '$http', 'jsonS
     var fetch = jsonService.fetchAllJson("customers");
     fetch.success(function(data) {
         customers = data;
-        angular.forEach(customers, function(value, key) {
+        angular.forEach(customers, function(object) {
+        	
 
-            if (value.id === custId) {
-                $scope.customer = value;
+            if (object.id === custId) {
+                $scope.customer = object;
             }
         });
 
