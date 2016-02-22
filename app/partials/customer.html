@@ -1,43 +1,43 @@
 <div ng-controller="customerCtrl">
-    <div class="customer-inputForm">
-        <form ng-submit="addCustomer()">
-            <table>
-                <tr>
-                    <td>Customer Name:
-                        <input type="text" ng-model="custName"></input>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Address:
-                        <input type="text" ng-model="address"></input>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Country:
-                        <input type="text" ng-model="country"></input>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Account Manager:
-                        <input type="text" ng-model="accMngr"></input>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Account Manager Email:
-                        <input type="email" ng-model="accMngrEmail"></input>
-                    </td>
-                </tr>
-            </table>
-            <input type="submit" value="Add Customer"></input>
+
+<button  ng-show="display" id="btn-addcustomer" class="btn btn-primary" ng-click="toggleShow()"><span class="glyphicon glyphicon-plus"></span></button>
+<button ng-show="!display"id="btn-addcustomer" class="btn btn-primary" ng-click="toggleShow()"><span class="glyphicon glyphicon-chevron-up"></span></button>
+    <div class="customer-inputForm" ng-show="!display">
+        <form ng-submit="addCustomer()" class="form-horizontal">
+            <div  class=" row">
+                <div class="col-lg-4"><label >Customer Name:</label></div>
+                <div class="col-lg-8"><input type="text" ng-model="custName" class="form-control " required></input></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4"><label>Address:</label></div>
+                <div class="col-lg-8"><input type="text" ng-model="address" class="form-control" required></input></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4"><label>Country:</label></div>
+                <div class="col-lg-8"><input type="text" ng-model="country" class="form-control"></input></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4"><label>Account Manager:</label></div>
+                <div class="col-lg-8"><input type="text" ng-model="accMngr" class="form-control"></input></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4"><label>Account Manager Email:</label></div>
+                <div class="col-lg-8"><input type="email" ng-model="accMngrEmail" class="form-control"></input></div>
+            </div>
+            <input type="submit" id="add-customer" value="Add Customer" class="btn btn-primary"></input>
         </form>
+
     </div>
-    <input ng-model="searchKeyword" placeholder="Search..." class="customer-search"></input>
+
+
+    <div class="customer-table"></div>
+    <input ng-model="searchKeyword" placeholder="Search..." id="customer-search" class="form-control"></input>
     <table class="customer-list" width="100%">
         <tr>
             <th width="17%">Customer Name</th>
-            <th width="50%">Address</th>
-            <th width="6%">Country</th>
-            <th width="12%">Account Manager</th>
+            <th width="46%">Address</th>
+            <th width="5%">Country</th>
+            <th width="17%">Account Manager</th>
             <th width="15%">Account Manager Email</th>
         </tr>
         <tr ng-repeat="item in customers | filter: searchKeyword  track by $index">
@@ -48,4 +48,5 @@
             <td><a ng-href="#">{{item.accMngrEmail}}</a></td>
         </tr>
     </table>
+    </div>
 </div>

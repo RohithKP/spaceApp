@@ -4,7 +4,7 @@
 }
 .customer-inputForm{
 	display: block;
-	width: 500px;
+	width: 600px;
 	margin: 0 auto;
 }
 
@@ -20,12 +20,10 @@
 	padding: 1rem;
 	table-layout: fixed;
 }
-.customer-list th{
+.customer-list tr th{
 	background-color: #4CAF50;
 	color: #fff;
 	padding: .6rem;
-	padding-left: 0;
-
 	text-align: left;
 }
 .customer-list th,td{
@@ -35,7 +33,32 @@
 }
 .customer-list td{
 	padding: 15px;
+	font-size: .95rem;
 }
 .customer-list td a{
 	text-decoration:none;
+}
+.row{
+	padding: .5rem;
+}
+#btn-addcustomer{
+	float: right;
+	position: relative;
+	right: 11.3%;
+}
+#customer-search{
+	width: 20%;
+	position: relative;
+    top: 8px;
+    left: 145px;
+}
+#add-customer{
+	float: right;
+}
+#customer-details{
+	width: 500px;
+	height: 300px;
+	display: block;
+	border: 1px solid #999;
+	margin: 100px auto;
 }

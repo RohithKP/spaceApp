@@ -1,4 +1,4 @@
-app.factory('jsonService', ['$http', function($http) {
+app.service('jsonService', ['$http', function($http) {
     var APIJson = {};
     APIJson.fetchAllJson = function(file) {
         return $http.get('../assets/json/' + file + '.json');
