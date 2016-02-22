@@ -17,7 +17,6 @@ angular.module('myApp').directive('myNotebook', function ($filter) {
                  },
                 link:function (scope, element, attrs) {
              		  scope.$watch('todos', function () {
-                  console.log(scope.todos);
                   scope.remainingCount = $filter('filter')(scope.todos, { done: false }).length;
                   scope.completedCount = scope.todos.length - scope.remainingCount;
                   scope.allChecked = !scope.remainingCount;
@@ -53,7 +52,7 @@ angular.module('myApp').directive('myNotebook', function ($filter) {
 /* .directive('editable', function() {
      return {
        controller:function ($scope, $attrs) {
-                           $scope.bool = 'false';
+                           $scope.bool = false;
                            $scope.edit = function (id) {
                            $scope.bool = true;
                                }

@@ -1,4 +1,4 @@
-angular.module('myApp', ['angular.filter','ngRoute']);
+angular.module('myApp', ['angular.filter','ngRoute','ngAnimate']);
 
     // configure our routes
     angular.module('myApp').config(function($routeProvider) {
@@ -11,15 +11,16 @@ angular.module('myApp', ['angular.filter','ngRoute']);
             })
 
             // route for the about page
-            .when('/about', {
-                templateUrl : 'pages/about.html',
-                controller  : 'aboutController'
+            .when('/customers', {
+                templateUrl : '../partials/customers.html',
+                controller  : ''
             })
 
             // route for the contact page
-            .when('/contact', {
-                templateUrl : 'pages/contact.html',
-                controller  : 'contactController'
+            .when('/dashboard', {
+                templateUrl : '../partials/dashboard.html',
+                controller  : ''
             });
     });
+
 

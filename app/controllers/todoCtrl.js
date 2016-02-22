@@ -1,6 +1,12 @@
  angular.module('myApp').controller('TodoCtrl', ['$scope', 'todoService', function ($scope, todoService) {
 
         $scope.todos =  todoService.todos();
+         $scope.pageClass = 'page-todo';
+//          $scope.todos = [];
+
+
+//    todoService.todos(function(d) { scope.todos = d }, function () {})
+
 
         $scope.getTodos = function () {
             return todoService.todos();
