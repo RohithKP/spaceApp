@@ -1,4 +1,4 @@
-app.controller('customerDetailsCtrl', ['$routeParams', '$scope', 'jsonService', function($routeParams, $scope, jsonService) {
+angular.module('myApp').controller('customerDetailsCtrl', ['$routeParams', '$scope', 'jsonService', function($routeParams, $scope, jsonService) {
     var custId = $routeParams.custId;
     var customers = [];
     $scope.customer = [];

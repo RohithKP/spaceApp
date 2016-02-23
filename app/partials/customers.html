@@ -1,7 +1,11 @@
+<div>
+  <h3>CUSTOMERS</h3>
+</div>
+
 <div ng-controller="customerCtrl">
 
-<button  ng-show="display" id="btn-addcustomer" class="btn btn-primary" ng-click="toggleShow()"><span class="glyphicon glyphicon-plus"></span></button>
-<button ng-show="!display"id="btn-addcustomer" class="btn btn-primary" ng-click="toggleShow()"><span class="glyphicon glyphicon-chevron-up"></span></button>
+<button  ng-show="display" id="btn-addcustomer" class="btn btn-primary" ng-click="toggleShow()"><span class="fa fa-plus"></span></button>
+<button ng-show="!display"id="btn-addcustomer" class="btn btn-primary" ng-click="toggleShow()"><span class="fa fa-times"></span></button>
     <div class="customer-inputForm" ng-show="!display">
         <form ng-submit="addCustomer()" class="form-horizontal">
             <div  class=" row">

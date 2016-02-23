@@ -1,4 +1,4 @@
-app.controller('customerCtrl', ['$scope', '$http', 'jsonService', function($scope, $http, jsonService) {
+angular.module('myApp').controller('customerCtrl', ['$scope', '$http', 'jsonService', function($scope, $http, jsonService) {
         $scope.display = 'false';
     $scope.toggleShow = function(){
         $scope.display = !$scope.display;
