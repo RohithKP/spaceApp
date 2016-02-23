@@ -1,64 +1,80 @@
-*{
-	margin: 0;
-	padding: 0;
-}
-.customer-inputForm{
-	display: block;
-	width: 600px;
-	margin: 0 auto;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-.customer-list{
-	border-collapse: collapse;
+.customer-inputForm {
+    display: block;
+    width: 600px;
+    margin: 0 auto;
+}
+
+.customer-inputForm hr {
+    margin-top: 4rem;
+    border-top: 1px solid #999;
+}
+
+.customer-list {
+    border-collapse: collapse;
     width: 80%;
     display: block;
     margin: 0 auto;
+}
 
+.customer-list {
+    padding: 1rem;
+    table-layout: fixed;
+}
 
+.customer-list tr th {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: .6rem;
+    text-align: left;
 }
-.customer-list{
-	padding: 1rem;
-	table-layout: fixed;
+
+.customer-list th,
+td {
+    text-align: left;
+    padding-left: 0;
+    padding-right: .7rem;
 }
-.customer-list tr th{
-	background-color: #4CAF50;
-	color: #fff;
-	padding: .6rem;
-	text-align: left;
+
+.customer-list td {
+    padding: 15px;
+    font-size: .95rem;
 }
-.customer-list th,td{
-	text-align: left;
-	padding-left: 0;
-	padding-right: .7rem;
+
+.customer-list td a {
+    text-decoration: none;
 }
-.customer-list td{
-	padding: 15px;
-	font-size: .95rem;
+
+.row {
+    padding: .5rem;
 }
-.customer-list td a{
-	text-decoration:none;
+
+#btn-addcustomer {
+    float: right;
+    position: relative;
+    right: 11.3%;
 }
-.row{
-	padding: .5rem;
-}
-#btn-addcustomer{
-	float: right;
-	position: relative;
-	right: 11.3%;
-}
-#customer-search{
-	width: 20%;
-	position: relative;
+
+#customer-search {
+    width: 20%;
     top: 8px;
+    position: relative;
     left: 145px;
 }
-#add-customer{
-	float: right;
+
+#add-customer {
+    float: right;
+    margin-right: 5px;
 }
-#customer-details{
-	width: 500px;
-	height: 300px;
-	display: block;
-	border: 1px solid #999;
-	margin: 100px auto;
+
+#customer-details {
+    width: 500px;
+    height: 300px;
+    display: block;
+    border: 1px solid #999;
+    margin: 100px auto;
 }
