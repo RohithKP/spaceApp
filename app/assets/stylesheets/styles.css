@@ -186,5 +186,20 @@ input[disabled]{
 }
 
 
- .ng-enter           { animation: slideInRight 0.5s both ease-in; z-index: 88; }
-.ng-leave           { animation: slideOutLeft 1s both ease-in; z-index: 99; }
+
+ .ng-enter           { animation: slideInRight .5s both ease-in-out; z-index: 88; }
+.ng-leave           { animation: slideOutLeft .5s both ease-in-out; z-index: 80; }
+
+
+ .page-todo{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+ }
+ #main-container{
+  /*position: absolute;*/
+  min-height: 600px;
+ }
+
