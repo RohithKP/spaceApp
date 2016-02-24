@@ -13,7 +13,7 @@
    <div class=" container-div">
      <div class="col-lg-2 text-info"><samp> Due Date: {{ key }}</samp> </div>
      <div class="col-lg-8 li-items">
-     <li class="list-item bg-danger" ng-repeat="todo in value |orderBy:id" ng-mouseenter="hover(todo)" ng-mouseleave="hover(todo)" ng-class="{bgSuccess: todo.done==true}">
+     <li class="bg-danger" ng-repeat="todo in value |orderBy:id" ng-mouseenter="hover(todo)" ng-mouseleave="hover(todo)" ng-class="{bgSuccess: todo.done==true}">
             <my-note class="span2 " delete="deleteTodo(todo.id)" todo="todo"  >
                 <span ng-show="todo.showDelete" ><span class="pull-right" ng-click="delete(todo.id)" ><i class="fa fa-times"></i></span>
                 <span class="pull-right" editable ng-click="edit()" > <i ng-show="bool&&!todo.done" class="fa fa-pencil"></i><i  ng-show="!bool" class="fa fa-floppy-o"></i></span></span>
