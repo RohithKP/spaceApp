@@ -2,15 +2,15 @@
     <script type="text/ng-template" id="partials/notebook-directive.html">
 
 
-   <div class="col-lg-10">
-      <div class='row' >
+   <div class="">
+    <div class='row' >
     <hr>
     <h3>Todo History</h3>
-       <samp>  <span class="col-lg-4 text-success blockquote" >Completed : {{completedCount}}</span></samp>
-       <samp>   <span class="col-lg-4 text-warning blockquote">Remaining Count: {{remainingCount}}</span></samp>
+       <samp>  <span class="col-lg-6 text-success blockquote" >Completed : {{completedCount}}</span></samp>
+       <samp>   <span class="col-lg-6 text-warning blockquote">Remaining Count: {{remainingCount}}</span></samp>
    </div>
    <ul class="" ng-repeat="(key, value) in todos | groupBy: 'date' " >
-   <div class='container-div'>
+   <div class=" container-div">
      <div class="col-lg-2 text-info"><samp> Due Date: {{ key }}</samp> </div>
      <div class="col-lg-8 li-items">
      <li class="list-item bg-danger" ng-repeat="todo in value |orderBy:id" ng-mouseenter="hover(todo)" ng-mouseleave="hover(todo)" ng-class="{bgSuccess: todo.done==true}">
@@ -59,7 +59,7 @@
             </div>
         </div>
 
-        <my-notebook class="col-lg-10 todo-wrapper" todos="getTodos()" ondelete="deleteTodo(id)">
+        <my-notebook class="todo-wrapper" todos="getTodos()" ondelete="deleteTodo(id)">
           {{remainingCount}}
         </my-notebook>
     </div>
