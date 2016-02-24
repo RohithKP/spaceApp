@@ -47,7 +47,7 @@ angular.module('myApp', ['angular.filter','ngRoute','ngAnimate']);
             // route for the about page
             .when('/customers', {
                 templateUrl : '../partials/customers.html',
-                controller  : ''
+                controller  : 'customerCtrl'
             })
 
             // route for the contact page

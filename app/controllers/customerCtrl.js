@@ -1,6 +1,8 @@
 angular.module('myApp').controller('customerCtrl', ['$scope', '$http', 'jsonService', function($scope, $http, jsonService) {
-        $scope.display = 'false';
-    $scope.toggleShow = function(){
+
+    $scope.pageClass = 'page-customer';
+    $scope.display = 'false';
+    $scope.toggleShow = function() {
         $scope.display = !$scope.display;
 
     }
@@ -11,7 +13,7 @@ angular.module('myApp').controller('customerCtrl', ['$scope', '$http', 'jsonServ
         $scope.customers = data;
     });
 
-    
+
     // $scope.saved = localStorage.getItem('customers');
     // $scope.customers = $scope.customers.push($scope.saved);
     // $scope.customers = ($scope.saved !== null) ? JSON.parse($scope.saved) : [];
@@ -24,7 +26,7 @@ angular.module('myApp').controller('customerCtrl', ['$scope', '$http', 'jsonServ
             accMngr: $scope.accMngr,
             accMngrEmail: $scope.accMngrEmail
         });
-           // localStorage.setItem('customers', JSON.stringify($scope.customers));
+        // localStorage.setItem('customers', JSON.stringify($scope.customers));
 
     };
 

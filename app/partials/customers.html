@@ -6,27 +6,27 @@
 
 <button  ng-show="display" id="btn-addcustomer" class="btn btn-primary" ng-click="toggleShow()"><span class="fa fa-plus"></span></button>
 <button ng-show="!display"id="btn-addcustomer" class="btn btn-primary" ng-click="toggleShow()"><span class="fa fa-times"></span></button>
-    <div class="customer-inputForm" ng-show="!display">
-        <form ng-submit="addCustomer()" class="form-horizontal">
-            <div  class=" row">
-                <div class="col-lg-4"><label >Customer Name:</label></div>
-                <div class="col-lg-8"><input type="text" ng-model="custName" class="form-control " required></input></div>
+    <div  ng-show="!display">
+        <form ng-submit="addCustomer()" id="customer-inputForm" class="form-horizontal">
+            <div  class="pad row">
+                <div class="col-lg-3"><label >Customer Name:</label></div>
+                <div class="col-lg-5"><input type="text" ng-model="custName" class="form-control " required></input></div>
             </div>
-            <div class="row">
-                <div class="col-lg-4"><label>Address:</label></div>
-                <div class="col-lg-8"><input type="text" ng-model="address" class="form-control" required></input></div>
+            <div class="pad row">
+                <div class="col-lg-3"><label>Address:</label></div>
+                <div class="col-lg-5"><input type="text" ng-model="address" class="form-control" required></input></div>
             </div>
-            <div class="row">
-                <div class="col-lg-4"><label>Country:</label></div>
-                <div class="col-lg-8"><input type="text" ng-model="country" class="form-control"></input></div>
+            <div class="pad row">
+                <div class="col-lg-3"><label>Country:</label></div>
+                <div class="col-lg-5"><input type="text" ng-model="country" class="form-control"></input></div>
             </div>
-            <div class="row">
-                <div class="col-lg-4"><label>Account Manager:</label></div>
-                <div class="col-lg-8"><input type="text" ng-model="accMngr" class="form-control"></input></div>
+            <div class="pad row">
+                <div class="col-lg-3"><label>Account Manager:</label></div>
+                <div class="col-lg-5"><input type="text" ng-model="accMngr" class="form-control"></input></div>
             </div>
-            <div class="row">
-                <div class="col-lg-4"><label>Account Manager Email:</label></div>
-                <div class="col-lg-8"><input type="email" ng-model="accMngrEmail" class="form-control"></input></div>
+            <div class="pad row">
+                <div class="col-lg-3"><label>Account Manager Email:</label></div>
+                <div class="col-lg-5"><input type="email" ng-model="accMngrEmail" class="form-control"></input></div>
             </div>
             <input type="submit" id="add-customer" value="Add Customer" class="btn btn-primary"></input>
         </form>
@@ -35,14 +35,14 @@
     </div>
 
 
-    <div class="customer-table"></div>
-    <input ng-model="searchKeyword" placeholder="Search..." id="customer-search" class="form-control"></input>
-    <table class="customer-list" width="100%">
+    <div class="table-responsive"></div>
+    <input ng-model="searchKeyword" placeholder="Search..." id="customer-search" class=""></input>
+    <table class="table table-hover">
         <tr>
-            <th width="17%">Customer Name</th>
-            <th width="46%">Address</th>
-            <th width="5%">Country</th>
-            <th width="17%">Account Manager</th>
+            <th>Customer Name</th>
+            <th>Address</th>
+            <th>Country</th>
+            <th>Account Manager</th>
             <th width="15%">Account Manager Email</th>
         </tr>
         <tr ng-repeat="item in customers | filter: searchKeyword  track by $index">
