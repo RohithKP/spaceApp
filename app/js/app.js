@@ -6,7 +6,7 @@ angular.module('myApp', ['angular.filter','ngRoute','ngAnimate']);
 
             // route for the home page
             .when('/todo', {
-                templateUrl : './partials/todo.html',
+                templateUrl : './app/partials/todo.html',
                 controller  : 'TodoCtrl'
             })
             .when('/customer/:custId', {
