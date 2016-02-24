@@ -1,0 +1,87 @@
+[{
+    "id": "cust-1",
+    "custName": "Performax360",
+    "address": "3790 El Camino Real, Palo Alto CA - 94306 USA",
+    "country": "USA",
+    "accMngr": "Niranjana Nair",
+    "accMngrEmail": "ninju@qburst.com"
+}, {
+    "id": "cust-2",
+    "custName": "Odypharm Lifescience",
+    "address": "1743785, 12/F., Lockhart Road, Wanchai, Hong Kong",
+    "country": "Hong Kong",
+    "accMngr": "Chinmay Varma",
+    "accMngrEmail": "chinmay@qburst.com"
+}, {
+    "id": "cust-3",
+    "custName": "UNIQLO TAIWAN, LTD",
+    "address": "15F No 68, Sec.2, Sianmin Blvd. Banqiao District, New Taipei City, Taiwan (R.O.C)​",
+    "country": "Taiwan",
+    "accMngr": "Chinmay Varma",
+    "accMngrEmail": "chinmay@qburst.com"
+}, {
+    "id": "cust-4",
+    "custName": "Chapman Development LLC",
+    "address": "800 Kentworth Ave Washington DC 20019",
+    "country": "USA",
+    "accMngr": "Suresh Nair",
+    "accMngrEmail": "spnair@qburst.com"
+}, {
+    "id": "cust-5",
+    "custName": "Performax360",
+    "address": "3790 El Camino Real, Palo Alto CA - 94306 USA",
+    "country": "USA",
+    "accMngr": "Niranjana Nair",
+    "accMngrEmail": "ninju@qburst.com"
+}, {
+    "id": "cust-6",
+    "custName": "Odypharm Lifescience",
+    "address": "1743785, 12/F., Lockhart Road, Wanchai, Hong Kong",
+    "country": "Hong Kong",
+    "accMngr": "Chinmay Varma",
+    "accMngrEmail": "chinmay@qburst.com"
+}, {
+    "id": "cust-7",
+    "custName": "UNIQLO TAIWAN, LTD",
+    "address": "15F No 68, Sec.2, Sianmin Blvd. Banqiao District, New Taipei City, Taiwan (R.O.C)​",
+    "country": "Taiwan",
+    "accMngr": "Chinmay Varma",
+    "accMngrEmail": "chinmay@qburst.com"
+}, {
+    "id": "cust-8",
+    "custName": "Chapman Development LLC",
+    "address": "800 Kentworth Ave Washington DC 20019",
+    "country": "USA",
+    "accMngr": "Suresh Nair",
+    "accMngrEmail": "spnair@qburst.com"
+}, {
+    "id": "cust-9",
+    "custName": "Performax360",
+    "address": "3790 El Camino Real, Palo Alto CA - 94306 USA",
+    "country": "USA",
+    "accMngr": "Niranjana Nair",
+    "accMngrEmail": "ninju@qburst.com"
+}, {
+    "id": "cust-10",
+    "custName": "Odypharm Lifescience",
+    "address": "1743785, 12/F., Lockhart Road, Wanchai, Hong Kong",
+    "country": "Hong Kong",
+    "accMngr": "Chinmay Varma",
+    "accMngrEmail": "chinmay@qburst.com"
+}, {
+    "id": "cust-11",
+    "custName": "UNIQLO TAIWAN, LTD",
+    "address": "15F No 68, Sec.2, Sianmin Blvd. Banqiao District, New Taipei City, Taiwan (R.O.C)​",
+    "country": "Taiwan",
+    "accMngr": "Chinmay Varma",
+    "accMngrEmail": "chinmay@qburst.com"
+}, {
+    "id": "cust-12",
+    "custName": "Chapman Development LLC",
+    "address": "800 Kentworth Ave Washington DC 20019",
+    "country": "USA",
+    "accMngr": "Suresh Nair",
+    "accMngrEmail": "spnair@qburst.com"
+}]
+
+
