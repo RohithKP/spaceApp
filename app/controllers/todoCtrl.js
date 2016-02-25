@@ -7,10 +7,13 @@
          });
 
          $scope.pageClass = 'page-todo';
+
+
 //    todoService.todos(function(d) { scope.todos = d }, function () {})
 
 
         $scope.getTodos = function () {
+
             return $scope.todos;
         };
 
