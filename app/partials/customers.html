@@ -1,41 +1,55 @@
 <div>
-  <h3>CUSTOMERS</h3>
+    <h3>CUSTOMERS</h3>
 </div>
-
-
 <div ng-controller="customerCtrl">
-
-<button  ng-show="display" id="btn-addcustomer" class="btn btn-primary" ng-click="toggleShow()"><span class="fa fa-plus"></span></button>
-<button ng-show="!display"id="btn-addcustomer" class="btn btn-primary" ng-click="toggleShow()"><span class="fa fa-times"></span></button>
-    <div  ng-show="!display">
+    <button ng-show="display" id="btn-addcustomer" class="btn btn-primary" ng-click="toggleShow()"><span class="fa fa-plus"></span></button>
+    <button ng-show="!display" id="btn-addcustomer" class="btn btn-primary" ng-click="toggleShow()"><span class="fa fa-times"></span></button>
+    <div ng-show="!display">
         <form ng-submit="addCustomer()" id="customer-inputForm" class="form-horizontal">
-            <div  class="pad row">
-                <div class="col-lg-3"><label >Customer Name:</label></div>
-                <div class="col-lg-5"><input type="text" ng-model="custName" class="form-control " required></input></div>
+            <div class="pad row">
+                <div class="col-lg-3">
+                    <label>Customer Name:</label>
+                </div>
+                <div class="col-lg-5">
+                    <input type="text" ng-model="custName" class="form-control " required></input>
+                </div>
             </div>
             <div class="pad row">
-                <div class="col-lg-3"><label>Address:</label></div>
-                <div class="col-lg-5"><input type="text" ng-model="address" class="form-control" required></input></div>
+                <div class="col-lg-3">
+                    <label>Address:</label>
+                </div>
+                <div class="col-lg-5">
+                    <input type="text" ng-model="address" class="form-control" required></input>
+                </div>
             </div>
             <div class="pad row">
-                <div class="col-lg-3"><label>Country:</label></div>
-                <div class="col-lg-5"><input type="text" ng-model="country" class="form-control"></input></div>
+                <div class="col-lg-3">
+                    <label>Country:</label>
+                </div>
+                <div class="col-lg-5">
+                    <input type="text" ng-model="country" class="form-control"></input>
+                </div>
             </div>
             <div class="pad row">
-                <div class="col-lg-3"><label>Account Manager:</label></div>
-                <div class="col-lg-5"><input type="text" ng-model="accMngr" class="form-control"></input></div>
+                <div class="col-lg-3">
+                    <label>Account Manager:</label>
+                </div>
+                <div class="col-lg-5">
+                    <input type="text" ng-model="accMngr" class="form-control"></input>
+                </div>
             </div>
             <div class="pad row">
-                <div class="col-lg-3"><label>Account Manager Email:</label></div>
-                <div class="col-lg-5"><input type="email" ng-model="accMngrEmail" class="form-control"></input></div>
+                <div class="col-lg-3">
+                    <label>Account Manager Email:</label>
+                </div>
+                <div class="col-lg-5">
+                    <input type="email" ng-model="accMngrEmail" class="form-control"></input>
+                </div>
             </div>
             <input type="submit" id="add-customer" value="Add Customer" class="btn btn-primary"></input>
         </form>
         <hr>
-
     </div>
-
-
     <div class="table-responsive"></div>
     <input ng-model="searchKeyword" placeholder="Search..." id="customer-search" class=""></input>
     <table class="table table-hover">
@@ -44,7 +58,7 @@
             <th>Address</th>
             <th>Country</th>
             <th>Account Manager</th>
-            <th width="15%">Account Manager Email</th>
+            <th>Account Manager Email</th>
         </tr>
         <tr ng-repeat="item in customers | filter: searchKeyword  track by $index">
             <td><a ng-href="#customer/{{item.id}}">{{item.custName}}</a></td>
@@ -54,5 +68,5 @@
             <td><a ng-href="#">{{item.accMngrEmail}}</a></td>
         </tr>
     </table>
-    </div>
+</div>
 </div>

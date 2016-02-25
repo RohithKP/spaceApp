@@ -7,7 +7,7 @@ angular.module('myApp').controller('customerDetailsCtrl', ['$routeParams', '$sco
     fetch.success(function(data) {
         customers = data;
         angular.forEach(customers, function(object) {
-        	
+
 
             if (object.id === custId) {
                 $scope.customer = object;

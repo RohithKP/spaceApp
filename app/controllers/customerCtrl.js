@@ -14,9 +14,6 @@ angular.module('myApp').controller('customerCtrl', ['$scope', '$http', 'jsonServ
     });
 
 
-    // $scope.saved = localStorage.getItem('customers');
-    // $scope.customers = $scope.customers.push($scope.saved);
-    // $scope.customers = ($scope.saved !== null) ? JSON.parse($scope.saved) : [];
 
     $scope.addCustomer = function() {
         $scope.customers.unshift({
@@ -26,7 +23,7 @@ angular.module('myApp').controller('customerCtrl', ['$scope', '$http', 'jsonServ
             accMngr: $scope.accMngr,
             accMngrEmail: $scope.accMngrEmail
         });
-        // localStorage.setItem('customers', JSON.stringify($scope.customers));
+
 
     };
 
