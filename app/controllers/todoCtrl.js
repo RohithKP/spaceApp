@@ -1,29 +1,35 @@
- angular.module('myApp').controller('TodoCtrl', ['$scope', 'todoService', function ($scope, todoService) {
+ angular.module('myApp').controller('TodoCtrl', ['$scope','jsonService','$filter', function ($scope,jsonService,$filter) {
 
-        $scope.todos =  todoService.todos();
+         var fetch = jsonService.fetchAllJson("todos");
+
+         fetch.success(function(data) {
+         $scope.todos    = data;
+         });
+
          $scope.pageClass = 'page-todo';
-//          $scope.todos = [];
-
-
 //    todoService.todos(function(d) { scope.todos = d }, function () {})
 
 
         $scope.getTodos = function () {
-            return todoService.todos();
+            return $scope.todos;
         };
+
         $scope.addTodo = function (text,date) {
-            if(text != '') {
-                todoService.addTodo(text,date);
-            }
+          if(text != '') {
+            $scope.todos.unshift({
+                id:Date.now(), title:text,date:$filter('date')(date, "dd/MM/yyyy"),done:false
+            });
+          }
         };
-
         $scope.deleteTodo = function (id) {
-          console.log(id);
-            todoService.deleteTodo(id);
+            var oldTodos = $scope.todos;
+            data = [];
+            angular.forEach(oldTodos, function (item) {
+                if (item.id !== id) data.push(item);
+            });
+            $scope.todos= data;
         };
-
         $scope.resetForm = function() {
             $scope.text = '';
         };
     }]);
-
