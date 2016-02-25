@@ -43,7 +43,7 @@
             <th>Address</th>
             <th>Country</th>
             <th>Account Manager</th>
-            <th width="15%">Account Manager Email</th>
+            <th>Account Manager Email</th>
         </tr>
         <tr ng-repeat="item in customers | filter: searchKeyword  track by $index">
             <td><a ng-href="#customer/{{item.id}}">{{item.custName}}</a></td>
