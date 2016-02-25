@@ -1,67 +1,64 @@
-  <div >
-    <script type="text/ng-template" id="partials/notebook-directive.html">
+<div >
+  <script type="text/ng-template" id="partials/notebook-directive.html">
+  <div class="">
+  <div class='row' >
+  <hr>
+  <h3>Todo History</h3>
+  <samp>  <span class="col-lg-6 text-success blockquote" >Completed : {{completedCount}}</span></samp>
+  <samp>   <span class="col-lg-6 text-warning blockquote">Remaining Count: {{remainingCount}}</span></samp>
+  </div>
+  <ul class="" ng-repeat="(key, value) in todos | groupBy: 'date' " >
+  <div class=" container-div">
+  <div class="col-lg-2 text-info"><samp> Due Date: {{ key }}</samp> </div>
+  <div class="col-lg-8 li-items">
+  <li class="bg-danger" ng-repeat="todo in value |orderBy:id" ng-mouseenter="hover(todo)" ng-mouseleave="hover(todo)" ng-class="{bgSuccess: todo.done==true}">
+  <my-note class="span2 " delete="deleteTodo(todo.id)" todo="todo"  >
+  <span ng-show="todo.showDelete" ><span class="pull-right" ng-click="delete(todo.id)" ><i class="fa fa-times"></i></span>
+  <span class="pull-right" editable ng-click="edit()" > <i ng-show="bool&&!todo.done" class="fa fa-pencil"></i><i  ng-show="!bool" class="fa fa-floppy-o"></i></span></span>
+  <input ng-show="todo.showDelete" class="todo-chkbox checkbox-circle" type="checkbox" ng-model="todo.done">
+  <input class="todo-text" editable ng-show="!todo.done"  ng-disabled=bool  ng-model="todo.title"  >
+  <span class="todo-text" ng-show="todo.done" ><del>{{todo.title}}</del></span>
+  </my-note>
+  </li>
+  </div>
+  <div class="col-lg-2 "><samp><span class="text-warning" >total: {{value.length}}</span> <span class="text-success">completed:{{(value |  filter:{done:true}).length }}</samp></div>
+  </div>
+  </ul>
+  </div>
 
-
-   <div class="col-lg-10">
-      <div class='row' >
-    <hr>
-    <h3>Todo History</h3>
-       <samp>  <span class="col-lg-4 text-success blockquote" >Completed : {{completedCount}}</span></samp>
-       <samp>   <span class="col-lg-4 text-warning blockquote">Remaining Count: {{remainingCount}}</span></samp>
-   </div>
-   <ul class="" ng-repeat="(key, value) in todos | groupBy: 'date' " >
-   <div class='container-div'>
-     <div class="col-lg-2 text-info"><samp> Due Date: {{ key }}</samp> </div>
-     <div class="col-lg-8 li-items">
-     <li class="list-item bg-danger" ng-repeat="todo in value |orderBy:id" ng-mouseenter="hover(todo)" ng-mouseleave="hover(todo)" ng-class="{bgSuccess: todo.done==true}">
-            <my-note class="span2 " delete="deleteTodo(todo.id)" todo="todo"  >
-                <span ng-show="todo.showDelete" ><span class="pull-right" ng-click="delete(todo.id)" ><i class="fa fa-times"></i></span>
-                <span class="pull-right" editable ng-click="edit()" > <i ng-show="bool&&!todo.done" class="fa fa-pencil"></i><i  ng-show="!bool" class="fa fa-floppy-o"></i></span></span>
-                <input ng-show="todo.showDelete" class="todo-chkbox checkbox-circle" type="checkbox" ng-model="todo.done">
-                <input class="todo-text" editable ng-show="!todo.done"  ng-disabled=bool  ng-model="todo.title"  >
-                <span class="todo-text" ng-show="todo.done" ><del>{{todo.title}}</del></span>
-            </my-note>
-      </li>
-      </div>
-    <div class="col-lg-2 "><samp><span class="text-warning" >total: {{value.length}}</span> <span class="text-success">completed:{{(value |  filter:{done:true}).length }}</samp></div>
-    </div>
-    </ul>
-    </div>
-
-    </script>
- <script>
+  </script>
+  <script>
   $(function() {
     $( "#datepicker" ).datepicker({ minDate: 0,
-                               showOn: "button",
-                                buttonImage: "./assets/images/calendar.png",
-                                buttonImageOnly: true,
-                                buttonText: "Select date"
+      showOn: "button",
+      buttonImage: "./assets/images/calendar.png",
+      buttonImageOnly: true,
+      buttonText: "Select date"
 
-                                  });
+    });
   });
-</script>
-    <div ng-controller="TodoCtrl" style="padding-left:50px;">
-        <div class="row">
-            <h3>To Do</h3>
-        </div>
-        <div class="form-actions row">
-            <div class="input-append">
-                <form ng-submit="addTodo(text,date);resetForm();">
-                    <input class="todo-input" ng-model="text" type="text" placeholder="Add a todo">
-                    <!-- <input   class="todo-date" type="date" ng-model="date"> -->
-                   <span id="date-div">
-                    <input type="text" id="datepicker" class="todo-date"  ng-model="date" />
-                   </span>
-                    <button class="btn btn-primary btn-add btn-success" type="button"
-                        ng-disabled="!date" ng-click="addTodo(text, date);resetForm();">Add Todo
-                    </button>
-              </form>
-            </div>
-        </div>
-
-        <my-notebook class="col-lg-10 todo-wrapper" todos="getTodos()" ondelete="deleteTodo(id)">
-          {{remainingCount}}
-        </my-notebook>
+  </script>
+  <div ng-controller="TodoCtrl" style="padding-left:50px;">
+    <div class="row">
+      <h3>To Do</h3>
+    </div>
+    <div class="form-actions row">
+      <div class="input-append">
+        <form ng-submit="addTodo(text,date);resetForm();">
+          <input class="todo-input" ng-model="text" type="text" placeholder="Add a todo">
+          <!-- <input   class="todo-date" type="date" ng-model="date"> -->
+          <span id="date-div">
+            <input type="text" id="datepicker" class="todo-date"  ng-model="date" />
+          </span>
+          <button class="btn btn-primary btn-add btn-success" type="button"
+          ng-disabled="!date" ng-click="addTodo(text, date);resetForm();">Add Todo
+        </button>
+      </form>
     </div>
   </div>
 
+  <my-notebook class="todo-wrapper" todos="getTodos()" ondelete="deleteTodo(id)">
+    {{remainingCount}}
+  </my-notebook>
+</div>
+</div>
