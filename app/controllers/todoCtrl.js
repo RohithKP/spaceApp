@@ -1,4 +1,5 @@
  angular.module('myApp').controller('TodoCtrl', ['$scope','jsonService','$filter', function ($scope,jsonService,$filter) {
+<<<<<<< HEAD
 
          var fetch = jsonService.fetchAllJson("todos");
 
@@ -7,13 +8,24 @@
          });
 
          $scope.pageClass = 'page-todo';
+=======
 
+         var fetch = jsonService.fetchAllJson("todos");
+>>>>>>> 9beed585806ca499efba1a7d4e3c93cb6e387979
 
+         fetch.success(function(data) {
+         $scope.todos    = data;
+         });
+
+         $scope.pageClass = 'page-todo';
 //    todoService.todos(function(d) { scope.todos = d }, function () {})
 
 
         $scope.getTodos = function () {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9beed585806ca499efba1a7d4e3c93cb6e387979
             return $scope.todos;
         };
 

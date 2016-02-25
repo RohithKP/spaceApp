@@ -54,11 +54,7 @@ li i{
   height:35px;
   font-size:20px;
   float: left;
-<<<<<<< HEAD
   padding:6px;
-=======
-  padding:10px;
->>>>>>> 0531b82abbefbb4a7ef908703cf44b59573f6e09
 }
 .btn-add{
 margin-left: 10px;
@@ -97,11 +93,6 @@ margin-left: 10px;
 }
 */
 input[type="checkbox"] {
-<<<<<<< HEAD
-
-=======
-  margin:10px;
->>>>>>> 0531b82abbefbb4a7ef908703cf44b59573f6e09
 }
 
 .sidebar-nav-fixed{
@@ -212,7 +203,3 @@ input[disabled]{
   /*position: absolute;*/
   min-height: 600px;
  }
-<<<<<<< HEAD
-=======
-
->>>>>>> 0531b82abbefbb4a7ef908703cf44b59573f6e09
